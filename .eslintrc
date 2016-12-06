@@ -69,7 +69,7 @@
         "id-blacklist": "error",
         "id-length": 0,
         "id-match": "error",
-        "indent": "error",
+        "indent": ["error", 2],
         "init-declarations": "off",
         "jsx-quotes": "error",
         "key-spacing": "error",

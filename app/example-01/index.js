@@ -1,3 +1,3 @@
-import glaive from '../../glaive-modules/glaive-core'
+import * as glaive from '../../glaive-modules/glaive-core'
 
-glaive.addCanvas()
+glaive.setup()

@@ -3,50 +3,44 @@
 
 var _glaiveCore = require('../../glaive-modules/glaive-core');
 
-var _glaiveCore2 = _interopRequireDefault(_glaiveCore);
+var glaive = _interopRequireWildcard(_glaiveCore);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-_glaiveCore2.default.addCanvas();
+glaive.setup();
 
 },{"../../glaive-modules/glaive-core":2}],2:[function(require,module,exports){
 'use strict';
 
-module.exports = function () {
-    console.log('test');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.setup = setup;
+function setup() {
+  var canvas = document.querySelector('#game');
+  var ctx = canvas.getContext('2d');
 
-    var canvas = document.querySelector('#game');
-    var ctx = canvas.getContext('2d');
+  // 16:9
+  ctx.canvas.width = 640;
+  ctx.canvas.height = 360;
 
-    // 16:9
-    ctx.canvas.width = 640;
-    ctx.canvas.height = 360;
+  // 16:10
+  // ctx.canvas.width = 640;
+  // ctx.canvas.height = 400;
 
-    // 16:10
-    // ctx.canvas.width = 640;
-    // ctx.canvas.height = 400;
+  var greenBox = new Image();
 
-    var greenBox = new Image();
+  greenBox.src = '/assets/green-box.png';
 
-    greenBox.src = '/assets/green-box.png';
+  greenBox.onload = function () {
+    ctx.drawImage(greenBox, 100, 100);
+  };
 
-    greenBox.onload = function () {
-        ctx.drawImage(greenBox, 100, 100);
-    };
+  ctx.beginPath();
+  ctx.moveTo(115, 115);
+  ctx.lineTo(150, 150);
 
-    ctx.beginPath();
-    ctx.moveTo(115, 115);
-    ctx.lineTo(150, 150);
-
-    ctx.stroke();
-
-    var addCanvas = function addCanvas() {
-        document.body.appendChild(canvas);
-    };
-
-    return {
-        addCanvas: addCanvas
-    };
-}();
+  ctx.stroke();
+}
 
 },{}]},{},[1]);
