@@ -3,11 +3,11 @@
 
 var _glaiveCore = require('../../glaive-modules/glaive-core');
 
-var glaive = _interopRequireWildcard(_glaiveCore);
+var _glaiveCore2 = _interopRequireDefault(_glaiveCore);
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-glaive.setup();
+_glaiveCore2.default.setup();
 
 },{"../../glaive-modules/glaive-core":2}],2:[function(require,module,exports){
 'use strict';
@@ -15,32 +15,32 @@ glaive.setup();
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.setup = setup;
-function setup() {
-  var canvas = document.querySelector('#game');
-  var ctx = canvas.getContext('2d');
+exports.default = {
+  setup: function setup() {
+    var ctx = document.querySelector('#game').getContext('2d');
 
-  // 16:9
-  ctx.canvas.width = 640;
-  ctx.canvas.height = 360;
+    // 16:9
+    ctx.canvas.width = 640;
+    ctx.canvas.height = 360;
 
-  // 16:10
-  // ctx.canvas.width = 640;
-  // ctx.canvas.height = 400;
+    // 16:10
+    // ctx.canvas.width = 640;
+    // ctx.canvas.height = 400;
 
-  var greenBox = new Image();
+    var greenBox = new Image();
 
-  greenBox.src = '/assets/green-box.png';
+    greenBox.src = '/assets/green-box.png';
 
-  greenBox.onload = function () {
-    ctx.drawImage(greenBox, 100, 100);
-  };
+    greenBox.onload = function () {
+      ctx.drawImage(greenBox, 100, 100);
+    };
 
-  ctx.beginPath();
-  ctx.moveTo(115, 115);
-  ctx.lineTo(150, 150);
+    ctx.beginPath();
+    ctx.moveTo(115, 115);
+    ctx.lineTo(150, 150);
 
-  ctx.stroke();
-}
+    ctx.stroke();
+  }
+};
 
 },{}]},{},[1]);
