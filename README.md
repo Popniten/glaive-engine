@@ -2,11 +2,10 @@
 The beginning of a small, modularized javascript game engine. This repo will for
 starters contain all game engine modules, for convenience while developing.
 
-Repo prepared with electron and minimal web server for manual testing.
+Repo prepared with an express web server for manual testing.
 
 From project root:
 ``` bash
-$ electron .     # Launch game as desktop application.
 $ node server.js # Start web server.
 ```
 ## Modules
